@@ -3,7 +3,6 @@
     $sql = "SELECT * FROM cad_star";
 
     $res = $conn->query($sql);
-
     $qtd = $res->num_rows;
 
     if($qtd > 0){
@@ -23,7 +22,8 @@
             print "<td>".$row->email."</td>";
             print "<td>
                 <button onclick=\"location.href='?page=editar&id=".$row->id."';\" class='btn btn-success'>Editar</button>
-                <button class='btn btn-danger'>Excluir</button>
+                <button onclick=\"if(confirm('Tem certeza que deseja excluir?')){ location.href='?page=editar&acao=excluirid=".$row->id."';}else{false;}\" class='btn btn-danger'>Excluir</button>
+
             </td>";
             print "</tr>";
         }
