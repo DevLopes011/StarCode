@@ -20,6 +20,10 @@
         case "editar":
             include("editar-usuario.php");
         break;
+        case "excluir":
+            include("editar-usuario.php");
+        break;
+
     }
 
 ?>
