@@ -5,7 +5,7 @@
     $row = $res->fetch_object();
 
     
-    if (isset($_POST['cadastro'])) {
+    if (isset($_POST['editar'])) {
         $result = edita();
     } 
     function edita(){
@@ -32,20 +32,6 @@
         }
     }
 
-#    if (isset($_POST['excluir'])){
-#        $apaga = excui();
-#    }
-#    function excui () {
-#        include "config.php";
-#        $sql = "DELETE FROM cad_star WHERE id=".$_REQUEST["id"];
-#        $res = $conn->query($sql);
-#
-#        if ($res==true){
-#            print "<script>alert('Usuário excluido com successo!');</script>";
-#        }else{
-#            print "<script>location.href='?page=listar';</script>";
-#        }
-#    }
 
 ?>
 
@@ -71,7 +57,8 @@
         <input type="text" name="senha" value="<?php print $row->senha; ?>" class="form-control"> 
     </div>
     <div class="mb-3">
-        <button type="submit" name="cadastro" class="btn btn-primary">Editar</button>
+        <button type="submit" name="editar" class="btn btn-primary">Editar</button>
     </div>
+
 
 </form>

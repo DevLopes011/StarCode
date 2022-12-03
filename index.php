@@ -17,7 +17,6 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav">
-
         <li class="nav-item">
           <a class="nav-link active" aria-current="page" href="index.php">Home</a>
         </li>
@@ -34,10 +33,43 @@
     </div>
   </div>
 </nav>
+<div class="container">
+  <div class="row">
+    <div class="col mt-5">
+    <?php
+        include ("config.php");
+    
 
-<?php
-    include("pages.php")
+        switch(@$_REQUEST["page"]) {
+            case "novo":
+                include("novo-usuario.php");
+            break;
+            
+            case "listar":
+                include("listar-usuario.php");
+            break;
+         
+            case "salvar":
+                include("salvar-usuario.php");
+            break;
+            case "entrar":
+                include("entrar.php");
+            break;
+            case "editar":
+                include("editar-usuario.php");
+            break;
+            case "excluir":
+                include("excluir-usuario.php");
+            break;
+    
+        }
 ?>
+
+    </div>
+  </div>
+</div>
+
+
 
     
 </body>
