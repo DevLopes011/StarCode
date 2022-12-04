@@ -1,7 +1,6 @@
 <h1>Listar</h1>
 <?php
     $sql = "SELECT * FROM cad_star";
-
     $res = $conn->query($sql);
     $qtd = $res->num_rows;
 
@@ -22,14 +21,14 @@
             print "<td>".$row->email."</td>";
             print "<td>
                 <button onclick=\"location.href='?page=editar&id=".$row->id."';\" class='btn btn-success'>Editar</button>
-                <button onclick=\"if(confirm('Tem certeza que deseja excluir?')){ location.href='?page=excluir&acao=excluir&id=".$row->id."';}else{false;}\" class='btn btn-danger'>Excluir</button>
+                <button onclick=\"if(confirm('Tem certeza que deseja excluir?')){ location.href='?page=salvar&acao=excluir&id=".$row->id."';}else{false;}\" class='btn btn-danger'>Excluir</button>
                 </td>";
                 
             print "</tr>";
         }
 
     }else{
-        print "<p class='alert alert-danger'>Não encontrou resoldatos!</p>";
+        print "<p class='alert alert-danger'>Não encontrou resultados!</p>";
     }
 
     

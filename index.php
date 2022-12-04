@@ -11,7 +11,7 @@
 <body>
 <nav class="navbar navbar-expand-lg bg-light">
   <div class="container-fluid">
-    <a class="navbar-brand" href="#">Star Code</a>
+    <a class="navbar-brand"  href="index.php">Star Code</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -38,9 +38,7 @@
     <div class="col mt-5">
     <?php
         include ("config.php");
-    
-
-        switch(@$_REQUEST["page"]) {
+        switch(@$_REQUEST["page"])  {
             case "novo":
                 include("novo-usuario.php");
             break;
@@ -57,9 +55,6 @@
             break;
             case "editar":
                 include("editar-usuario.php");
-            break;
-            case "excluir":
-                include("excluir-usuario.php");
             break;
     
         }
