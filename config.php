@@ -9,8 +9,5 @@
       echo 'erro de conexao: ' . mysqli_connect_error();
      }
     
-     return $conn;
-     
-
-   
+     return $conn; 
 ?>

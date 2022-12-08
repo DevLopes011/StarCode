@@ -29,7 +29,7 @@
                     nome='{$nome}',
                     cargo='{$cargo}',
                     email='{$email}',
-                    email='{$senha}'
+                    senha='{$senha}'
                     WHERE id=".$_REQUEST["id"];
             
                 $res = $conn->query($sql);
@@ -52,7 +52,7 @@
                     print "<script>location.href='?page=listar';</script>";
                 }
                 break;
-     }
-
+     
+    }
 
 ?>

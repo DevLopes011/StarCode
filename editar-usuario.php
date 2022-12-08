@@ -3,39 +3,9 @@
     $sql = "SELECT * FROM cad_star WHERE id=".$_REQUEST["id"];
     $res = $conn->query($sql);
     $row = $res->fetch_object();
-
-    
-    if (isset($_POST['editar'])) {
-        $result = edita();
-    } 
-    function edita(){
-        include "config.php";
-        
-        $nome = $_POST["nome"];
-        $cargo = $_POST["cargo"];
-        $email = $_POST["email"];
-        $senha = $_POST["senha"];
-    
-        $sql = "UPDATE cad_star SET
-            nome='{$nome}',
-            cargo='{$cargo}',
-            email='{$email}',
-            email='{$senha}'
-            WHERE id=".$_REQUEST["id"];
-    
-        $res = $conn->query($sql);
-    
-        if ($res==true){
-            print "<script>alert('Usuário editado com sucesso!');</script>";
-        }else{
-            print "<script>location.href='?page=listar';</script>";
-        }
-    }
-
-
 ?>
 
-<form actio="?page=salvar" method="post">
+<form action="?page=salvar" method="post">
     <input type="hidden" name="acao" value="editar">
     <input type="hidden" name="id" value="<?php print $row->id; ?>">
 
